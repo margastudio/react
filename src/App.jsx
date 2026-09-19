@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="bg-white text-black font-sans antialiased selection:bg-black selection:text-white">
+    <div className="marga-shell">
       <Navbar />
       <main>
         <Hero />

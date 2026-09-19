@@ -5,18 +5,12 @@ export default function Contact() {
   const { t } = useTranslation();
 
   return (
-    <section id="contact" className="py-32 px-6 max-w-7xl mx-auto border-t border-black/10 flex flex-col items-start space-y-8">
-      <div className="space-y-2 max-w-2xl">
-        <h2 className="text-3xl md:text-5xl font-light">{t('contact.heading')}</h2>
-        <p className="text-2xl md:text-4xl font-light opacity-60">{t('contact.subheading')}</p>
-      </div>
+    <section id="contact" className="marga-section marga-contact">
+      <h2 className="marga-contact-headline">{t('contact.heading')}</h2>
+      <p className="marga-contact-sub">{t('contact.subheading')}</p>
+      <p className="max-w-md text-sm uppercase tracking-[0.18em] text-[rgba(27,26,24,0.6)]">{t('contact.status')}</p>
 
-      <p className="text-sm opacity-60 max-w-md">{t('contact.status')}</p>
-
-      <a 
-        href="mailto:margapardeilhan@gmail.com" 
-        className="inline-block bg-black text-white px-8 py-4 text-xs uppercase tracking-widest hover:bg-neutral-800 transition"
-      >
+      <a href="mailto:histudiomarga@gmail.com" className="marga-contact-cta">
         {t('contact.btn')}
       </a>
     </section>

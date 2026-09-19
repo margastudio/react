@@ -48,31 +48,33 @@ const projects = [
 
 export default function Work() {
   return (
-    <section id="work" className="py-24 px-6 max-w-7xl mx-auto border-t border-black/10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+    <section id="work" className="marga-section">
+      <div className="marga-section-header">
+        <h2>Selected work</h2>
+        <span className="marga-section-kicker">Portfolio</span>
+      </div>
+
+      <div className="marga-project-grid">
         {projects.map((project, idx) => (
-          <motion.div
+          <motion.article
             key={project.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: idx * 0.1 }}
-            className="group cursor-pointer space-y-4"
+            transition={{ duration: 0.6, delay: idx * 0.08 }}
+            className="marga-project-card"
           >
-            <div className="aspect-[4/3] bg-neutral-100 overflow-hidden relative rounded-lg border border-black/10">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
-              />
+            <div className="marga-project-media">
+              <img src={project.image} alt={project.title} />
             </div>
-            <div className="flex justify-between items-baseline pt-2">
-              <h3 className="text-xl font-medium">{project.title}</h3>
-              <span className="text-xs uppercase tracking-widest opacity-40">{project.id}</span>
+
+            <div className="marga-project-meta">
+              <h3 className="marga-project-title">{project.title}</h3>
+              <span className="marga-project-index">{project.id}</span>
             </div>
-            <p className="text-xs uppercase tracking-wider opacity-60">{project.cat}</p>
-            <p className="text-sm opacity-80 font-light leading-relaxed">{project.desc}</p>
-          </motion.div>
+            <p className="marga-project-cat">{project.cat}</p>
+            <p className="marga-project-desc">{project.desc}</p>
+          </motion.article>
         ))}
       </div>
     </section>

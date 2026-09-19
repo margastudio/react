@@ -12,13 +12,17 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto border-t border-black/10">
-      <h2 className="text-xs uppercase tracking-widest opacity-40 mb-12">{t('services.title')}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <section className="marga-section">
+      <div className="marga-section-header">
+        <h2>{t('services.title')}</h2>
+        <span className="marga-section-kicker">Services</span>
+      </div>
+
+      <div className="marga-services-grid">
         {services.map((srv, idx) => (
-          <div key={idx} className="space-y-2 border-l border-black/10 pl-6 py-2">
-            <h3 className="text-xl font-medium">{srv.title}</h3>
-            <p className="text-sm opacity-60 font-light leading-relaxed">{srv.desc}</p>
+          <div key={idx} className="marga-service">
+            <h3>{srv.title}</h3>
+            <p>{srv.desc}</p>
           </div>
         ))}
       </div>
